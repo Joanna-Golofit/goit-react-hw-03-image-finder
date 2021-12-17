@@ -1,3 +1,9 @@
+https://github.com/goitacademy/react-homework/blob/master/homework-03/README.pl.md
+
+https://github.com/goitacademy/react-homework/blob/master/homework-03/image-finder/README.pl.md
+
+useState, useEffect, Pixabay API, spinner, okno modalne
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
