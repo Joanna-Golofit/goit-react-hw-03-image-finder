@@ -1,11 +1,14 @@
-import './App.css';
-import ImageGalleryItem from "./components/ImageGalleryItem";
+// import './App.css';
+import "./components/styles.css"
+import Button from './components/Button';
+import ImageGallery from './components/ImageGallery';
 
 function App() {
   return (
     <div className="App">
+      <Button />
       halo
-      <ImageGalleryItem />
+      <ImageGallery />
     </div>
   );
 }

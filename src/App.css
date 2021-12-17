@@ -1,8 +1,9 @@
 body {
   /* text-align: center; */
   /* background-color: #8fb3fb; */
-  margin: 20px;
-background: linear-gradient(45deg, blue, red);
- background-attachment: fixed
+  /* margin: 20px; */
+  background: linear-gradient(45deg, blue, red);
+  background-attachment: fixed;
+  padding: 20px;
+  /* color: white; */
 }
-

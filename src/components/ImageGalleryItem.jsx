@@ -1,14 +1,3 @@
-// {
-//   /* <li class="gallery-item">
-//   <img src="" alt="" />
-// </li>; */
-// }
-
-// key: 23726584 - b0725e8cc2245e4091c11b21f;
-// https://pixabay.com/api/
-
-// https://pixabay.com/api/?key=23726584-b0725e8cc2245e4091c11b21f&q=yellow+flowers&image_type=photo
-
 import React, { Component } from "react";
 
 class ImageGalleryItem extends Component {
@@ -19,7 +8,7 @@ class ImageGalleryItem extends Component {
   fetchImages = () => {
     fetch(
       "https://pixabay.com/api/?key=23726584-b0725e8cc2245e4091c11b21f&q=yellow+flowers&image_type=photo"
-    )
+      )
       .then((dataJson) => {
         if (!dataJson.ok) {
           throw new Error("z ifa:", dataJson.status);
@@ -34,23 +23,38 @@ class ImageGalleryItem extends Component {
       })
       .catch((err) => console.log(err))
       .finally(console.log("fetchImages"));
-  };
+    };
 
   componentDidMount() {
     this.fetchImages();
   }
-
+  
   render() {
     return (
       <>
-        {this.state.images.map(image =>
-          <li key={ image.id} className="gallery-item">
-            <img src={image.previewURL} alt="" />
+        {this.state.images.map((image) => (
+          <li key={image.id} className="ImageGalleryItem">
+            <img
+              className="ImageGalleryItem-image"
+              src={image.previewURL}
+              alt=""
+            />
           </li>
-        )} 
+        ))}
       </>
     );
   }
 }
 
 export default ImageGalleryItem;
+
+        // {
+        //   /* <li class="gallery-item">
+        //   <img src="" alt="" />
+        // </li>; */
+        // }
+        
+        // key: 23726584 - b0725e8cc2245e4091c11b21f;
+        // https://pixabay.com/api/
+        
+        // https://pixabay.com/api/?key=23726584-b0725e8cc2245e4091c11b21f&q=yellow+flowers&image_type=photo
