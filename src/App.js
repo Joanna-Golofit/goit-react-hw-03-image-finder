@@ -1,13 +1,13 @@
 // import './App.css';
 import "./components/styles.css"
-import Button from './components/Button';
 // import ImageGalleryItem from "./components/ImageGalleryItem";
 import ImageGallery from './components/ImageGallery';
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <div className="App">
-      <Button />
+        <SearchBar/>
       halo
       <ImageGallery />
     </div>
