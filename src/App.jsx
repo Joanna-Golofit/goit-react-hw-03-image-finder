@@ -10,6 +10,7 @@ import SearchBar from "./components/SearchBar";
 // import Loader...
 import ImageGalleryItem from "./components/ImageGalleryItem";
 import Button from "./components/Button";
+import Modal from "./components/Modal";
 
 function App() {
   const [fetchedImages, setFetchedImages] = useState([]);
@@ -20,6 +21,7 @@ function App() {
   // const [query, setQuery] = useState("null");
   // const [query, setQuery] = useState("nul");
   const [query, setQuery] = useState("nut");
+  const [modal, setModal] = useState(false);
 
 
   useEffect(() => {
@@ -44,6 +46,11 @@ function App() {
     setQuery(inputValueFromSearchBar);
       setPerPage(12);
   };
+  const toggleModal = () => {
+    console.log("klik")
+    setModal( modal => !modal )
+    console.log(modal);
+  }
 
   return (
     <>
@@ -54,10 +61,11 @@ function App() {
         <ImageGallery>
           <ImageGalleryItem
             fetchedImages={fetchedImages}
-            // onClick={this.handleClick}
+            onClick={toggleModal}
           />
         </ImageGallery>
       )}
+      {modal && <Modal fetchedImages={fetchedImages} onClick={toggleModal} />}
       {/* {isLoading && <p>Loader..?</p>} */}
       {isLoading && (
         <Loader

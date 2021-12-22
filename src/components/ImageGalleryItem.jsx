@@ -7,7 +7,7 @@ const ImageGalleryItem = ({ fetchedImages, onClick }) => {
         className="ImageGalleryItem-image"
         src={webformatURL}
         alt={tags}
-        // onClick={() => onClick(webformatURL)}
+        onClick={onClick}
       />
     </li>
   ));

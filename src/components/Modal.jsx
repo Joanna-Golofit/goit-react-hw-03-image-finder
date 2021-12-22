@@ -1,10 +1,14 @@
 import React from 'react'
 
-const Modal = ({ largeImg, closeModal, tags }) => {
+const Modal = ({ fetchedImages, onClick }) => {
+  const { largeImageURL, tags } = fetchedImages;
   return (
-    <div className="Overlay" onClick={closeModal}>
+    <div className="Overlay" onClick={onClick}>
       <div className="Modal">
-        <img src={largeImg} alt={tags} />
+        <img
+          src="https://www.svgrepo.com/show/49706/eye-on-magnifying-glass.svg"
+          alt={tags}
+        />
       </div>
     </div>
   );
