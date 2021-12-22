@@ -103,7 +103,7 @@ img {
 }
 
 .SearchForm-input {
-  display: inline-block;
+   display: inline-block;
   width: 100%;
   font: inherit;
   font-size: 20px;
@@ -122,11 +122,12 @@ img {
  * ImageGallery
  */
 .ImageGallery {
+  margin-top: 15px;
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
-  margin-top: 0;
+  /* margin-top: 0; */
   margin-bottom: 0;
   padding: 0;
   list-style: none;
@@ -181,12 +182,16 @@ img {
 * Buton (Load more)
 */
 .Button {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: block;
   padding: 8px 16px;
   border-radius: 2px;
   background-color: #3f51b5;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  display: inline-block;
   color: #fff;
   border: 0;
   text-decoration: none;
@@ -203,5 +208,5 @@ img {
 
 .Button:hover,
 .Button:focus {
-  background-color: #303f9f;
+  background-color: #2c3a93;
 }
