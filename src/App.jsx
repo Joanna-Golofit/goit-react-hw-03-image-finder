@@ -22,7 +22,8 @@ function App() {
   // const [query, setQuery] = useState("nul");
   const [query, setQuery] = useState("nut");
   const [modal, setModal] = useState(false);
-
+  const [largeImageURL, setLargeImageURL] = useState("");
+const [tag, setTag] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -46,10 +47,14 @@ function App() {
     setQuery(inputValueFromSearchBar);
       setPerPage(12);
   };
-  const toggleModal = () => {
-    console.log("klik")
+  const toggleModal = (e) => {
+    console.log("toggleModal klik")
     setModal( modal => !modal )
+    // console.log(e.target.src); 
+    // console.log(e.target.alt); 
     console.log(modal);
+ setLargeImageURL(e.target.src);
+ setTag(e.target.alt);
   }
 
   return (
@@ -65,7 +70,13 @@ function App() {
           />
         </ImageGallery>
       )}
-      {modal && <Modal fetchedImages={fetchedImages} onClick={toggleModal} />}
+      {modal && (
+        <Modal
+          largeImageURL={largeImageURL}
+          tag={tag}
+          onClick={toggleModal}
+        />
+      )}
       {/* {isLoading && <p>Loader..?</p>} */}
       {isLoading && (
         <Loader
