@@ -23,7 +23,7 @@ function App() {
   const [query, setQuery] = useState("nut");
   const [modal, setModal] = useState(false);
   const [largeImageURL, setLargeImageURL] = useState("");
-const [tag, setTag] = useState("");
+  const [tag, setTag] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
@@ -45,37 +45,34 @@ const [tag, setTag] = useState("");
   const getKeyword = (inputValueFromSearchBar) => {
     //przesylana w propsach do searchbar i tam otrzymuje wartosc z inputa i ustawia ja tu jako query i przy okazji ustawia strone na 1
     setQuery(inputValueFromSearchBar);
-      setPerPage(12);
+    setPerPage(12);
   };
-  const toggleModal = (e) => {
-    console.log("toggleModal klik")
-    setModal( modal => !modal )
-    // console.log(e.target.src); 
-    // console.log(e.target.alt); 
+  const toggleModal = () => {
+    console.log("toggleModal klik");
+    setModal((modal) => !modal);
+    // console.log(e.target.src);
+    // console.log(e.target.alt);
     console.log(modal);
- setLargeImageURL(e.target.src);
- setTag(e.target.alt);
-  }
+  };
+
+  const openModal = (e) => {
+    console.log("openModal klik");
+    setLargeImageURL(e.target.src);
+    setTag(e.target.alt);
+    toggleModal();
+  };
 
   return (
     <>
       {error && <p>Whoops, something went wrong: {error.message}</p>}
       <SearchBar getKeyword={getKeyword} />
-      {/* halo2 */}
       {fetchedImages.length > 0 && (
         <ImageGallery>
-          <ImageGalleryItem
-            fetchedImages={fetchedImages}
-            onClick={toggleModal}
-          />
+          <ImageGalleryItem fetchedImages={fetchedImages} onClick={openModal} />
         </ImageGallery>
       )}
       {modal && (
-        <Modal
-          largeImageURL={largeImageURL}
-          tag={tag}
-          onClick={toggleModal}
-        />
+        <Modal largeImageURL={largeImageURL} tag={tag} onClick={toggleModal} />
       )}
       {/* {isLoading && <p>Loader..?</p>} */}
       {isLoading && (

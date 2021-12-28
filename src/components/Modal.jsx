@@ -15,7 +15,7 @@ const Modal = ({ largeImageURL, tag, onClick }) => {
       console.log("escape");
       console.log("img", largeImageURL);
 
-      // onClick();
+      onClick();
     }
   };
 
